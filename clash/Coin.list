@@ -97,6 +97,8 @@ DOMAIN-SUFFIX,huobi.ug
 DOMAIN-SUFFIX,huobi.co.ma
 DOMAIN-SUFFIX,huobi.br.com
 DOMAIN-KEYWORD,huobi
+DOMAIN-SUFFIX,htx.com
+DOMAIN-KEYWORD,htx
 
 # > OKX
 DOMAIN-SUFFIX,okex.com
@@ -182,19 +184,18 @@ DOMAIN-SUFFIX,dextools.io
 DOMAIN-SUFFIX,tradingview.com
 DOMAIN-SUFFIX,dcabtc.com
 DOMAIN-SUFFIX,chainalysis.com
-DOMAIN-SUFFIXquant.com
+DOMAIN-SUFFIX,quant.com
 DOMAIN-SUFFIX,viewbase.com
 DOMAIN-SUFFIX,bitcoinity.org
-DOMAIN-SUFFIXcompare.com
+DOMAIN-SUFFIX,compare.com
 DOMAIN-SUFFIX,coincodex.com
 DOMAIN-SUFFIX,cointrendz.com
 DOMAIN-SUFFIX,coincheckup.com
 DOMAIN-SUFFIX,thetie.io
-DOMAIN-SUFFIXrank.io
+DOMAIN-SUFFIX,rank.io
 DOMAIN-SUFFIX,tradeblock.com
 DOMAIN-SUFFIX,nyctale.io
 DOMAIN-SUFFIX,dovemetrics.com
-DOMAIN-SUFFIXrank.io
 DOMAIN-SUFFIX,icodrops.com
 DOMAIN-SUFFIX,chainbroker.io
 DOMAIN-SUFFIX,crunchbase.com
@@ -214,7 +215,7 @@ DOMAIN-SUFFIX,cbeci.org
 DOMAIN-SUFFIX,digiconomist.net
 DOMAIN-SUFFIX,1ml.com
 DOMAIN-SUFFIX,bitcoinvisuals.com
-DOMAIN-SUFFIX51.app
+DOMAIN-SUFFIX,51.app
 DOMAIN-SUFFIX,masternodes.online
 DOMAIN-SUFFIX,bitnodes.earn.com
 DOMAIN-SUFFIX,poolin.com
@@ -224,18 +225,13 @@ DOMAIN-SUFFIX,ewapool.net
 # > FTX
 DOMAIN-SUFFIX,ftx.com
 
-# > Metamask
-DOMAIN-KEYWORD,metamask
-DOMAIN,token  -api.metaswap.codefi.network
-DOMAIN,min  -api.🦦 Cryptocompare.com
-
 # > NFT
 DOMAIN-SUFFIX,opensea.io
 DOMAIN-SUFFIX,nftscan.com
 DOMAIN-SUFFIX,makersplace.com
 DOMAIN-SUFFIX,nonfungible.com
-DOMAIN-SUFFIXslam.io
-DOMAIN-SUFFIXart.io
+DOMAIN-SUFFIX,slam.io
+DOMAIN-SUFFIX,art.io
 DOMAIN-SUFFIX,nftcalendar.io
 DOMAIN-SUFFIX,nftgo.io
 
