@@ -1,0 +1,24 @@
+# 内容：T-mobile wifi-calling
+# 域名关键字匹配
+DOMAIN-KEYWORD,t-mobile
+DOMAIN-KEYWORD,anthropic
+DOMAIN-KEYWORD,Claude
+
+# 域名后缀匹配
+#域名走Tmobile分组代理
+DOMAIN,*.t-mobile.com
+DOMAIN-KEYWORD,t-mobile
+DOMAIN-SUFFIX,t-mobile.com
+DOMAIN,*.t-mo.co
+DOMAIN-SUFFIX,t-mo.co
+DOMAIN,*.venmo.com
+DOMAIN-SUFFIX,venmo.com
+
+#Tmobile WIFI-calling
+DOMAIN-SUFFIX,3gppnetwork.org
+DOMAIN,*.3gppnetwork.org
+DOMAIN-KEYWORD,3gppnetwork
+
+#IP段
+SRC-IP-CIDR,45.60.171.103/32
+SRC-IP-CIDR,45.60.151.103/32
