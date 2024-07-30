@@ -3,19 +3,16 @@
 # MyList
 # 域名后缀匹配
 DOMAIN-SUFFIX,time.windows.com
-DOMAIN-SUFFIX,lanzov.com
-DOMAIN-SUFFIX,hao123.com
-# ykkcloud
-DOMAIN-SUFFIX,ykkcloud.link
+DOMAIN-SUFFIX,object.icu
+DOMAIN-SUFFIX,cesu.wang
+DOMAIN-SUFFIX,ip.icu
 
 # 域名关键字匹配
 DOMAIN-KEYWORD,baidu
 
 # IP段匹配
 IP-CIDR,219.146.1.66/32,no-resolve
-# ykkcloud
-IP-CIDR,39.174.98.188/32,no-resolve
-IP-CIDR,122.224.8.210/32,no-resolve
+
 
 # 国内DNS
 DOMAIN-SUFFIX,dns.alidns.com
