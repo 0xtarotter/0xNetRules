@@ -1,5 +1,8 @@
 # 代理补充列表
 
+# 补充
+DOMAIN-SUFFIX,googleadservices.com
+
 # mypikpak
 DOMAIN-SUFFIX,dlandroid.rcv.sandai.net
 DOMAIN-SUFFIX,hub5idx.v6.shub.sandai.net
