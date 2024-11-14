@@ -1,13 +1,11 @@
 # 内容：T-mobile wifi-calling
 
-
-# 域名关键字匹配
+# 域名关键字匹配 - - - - - - - - - - - - - -x
 DOMAIN-KEYWORD,t-mobile
 DOMAIN-KEYWORD,t-mo
 DOMAIN-KEYWORD,3gppnetwork
 
-# 域名匹配
-#域名走Tmobile分组代理
+#域名走Tmobile分组代理 - - - - - - - - - - - - - -x
 DOMAIN,epdg.epc.mnc240.mcc310.pub.3gppnetwork.org
 DOMAIN,epdg.epc.mnc260.mcc310.pub.3gppnetwork.org
 DOMAIN,ss.epdg.epc.mnc260.mcc310.pub.3gppnetwork.org
@@ -17,12 +15,12 @@ DOMAIN,eas3.msg.t-mobile.com
 DOMAIN,mascns.t-mobile.com
 DOMAIN,ns.sipgeo.t-mobile.com
 
-# 域名后缀匹配
+# 域名后缀匹配 - - - - - - - - - - - - - -x
 DOMAIN-SUFFIX,t-mobile.com
 DOMAIN-SUFFIX,t-mo.co
 DOMAIN-SUFFIX,3gppnetwork.org
 
-#IP段
+#IP段 - - - - - - - - - - - - - -x
 SRC-IP-CIDR,45.60.171.103/32,no-resolve
 SRC-IP-CIDR,45.60.151.103/32,no-resolve
 SRC-IP-CIDR,66.94.0.0/19,no-resolve
