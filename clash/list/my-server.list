@@ -9,3 +9,6 @@ DOMAIN-SUFFIX,jpg.cat
 
 
 # 自定义放行域名&IP - - - - - - - - - - - - - -x
+DOMAIN-SUFFIX,1password.com
+DOMAIN-SUFFIX,1password.cn
+DOMAIN-SUFFIX,1password.net
