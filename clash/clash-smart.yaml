@@ -7,7 +7,7 @@
 proxy-providers:
 
   substore:
-    url: "订阅配置链接"
+    url: "订阅链接"
     type: http
     interval: 86400
     health-check:
@@ -353,6 +353,14 @@ proxy-groups:
 # ========================
 rules:
 
+
+  - RULE-SET,TikTok / Domain,TikTok
+  - RULE-SET,Youtube / Domain,YouTube
+  - RULE-SET,Facebook / Domain,Facebook
+  - RULE-SET,Telegram / Domain,Telegram 
+  - RULE-SET,Telegram / IP,Telegram 
+  - RULE-SET,Twitter / Domain,Twitter(X) 
+
   - RULE-SET,TEST / Domain,Test
   - RULE-SET,Block / Domain,Block  
   - RULE-SET,GitHub / Domain,GitHub    
@@ -370,7 +378,6 @@ rules:
   - RULE-SET,OKX / Domain,Crypto
   - RULE-SET,Bybit / Domain,Crypto
   - RULE-SET,Binance / Domain,Crypto
-  - RULE-SET,TikTok / Domain,Stream Media
   - RULE-SET,Netflix / Domain,Stream Media
   - RULE-SET,Netflix / IP,Stream Media,no-resolve
   - RULE-SET,Disney / Domain,Stream Media
