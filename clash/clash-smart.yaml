@@ -6,8 +6,8 @@
 
 proxy-providers:
 
-  火烧:
-    url: "机场订阅地址"
+  substore:
+    url: "订阅地址"
     type: http
     interval: 86400
     health-check:
@@ -16,89 +16,9 @@ proxy-providers:
       interval: 180
     proxy: 直连 
 
-  冰云:
-    url: "机场订阅地址"
-    type: http
-    interval: 86400
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 180
-    proxy: 直连  
-    
-  小牛:
-    url: "机场订阅地址"
-    type: http
-    interval: 86400
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 180
-    proxy: 直连    
-
-  硅谷:
-    url: "机场订阅地址"
-    type: http
-    interval: 86400
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 180
-    proxy: 直连
-
-  无界:
-    url: "机场订阅地址"
-    type: http
-    interval: 86400
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 180
-    proxy: 直连
-   
-  猫耳:
-    url: "机场订阅地址"
-    type: http
-    interval: 86400
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 180
-    proxy: 直连   
-
-  快猫:
-    url: "机场订阅地址"
-    type: http
-    interval: 86400
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 180
-    proxy: 直连    
-    
-  BestVPN:
-    url: "机场订阅地址a"
-    type: http
-    interval: 86400
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 180
-    proxy: 直连    
-
-  牛逼:
-    url: "机场订阅地址"
-    type: http
-    interval: 86400
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 180
-    proxy: 直连      
-
 proxies:
   - {name: 直连, type: direct}
-  - {name: 拒绝, type: reject}
+  - {name: ❌拒绝, type: reject}
 
 # ========================
 # 主要端口设置
@@ -113,7 +33,7 @@ allow-lan: true
 mode: rule
 log-level: info
 
-external-controller: 0.0.0.0:9090
+external-controller: 0.0.0.0:19090
 # external-ui: ui
 # external-ui-name: zashboard
 # external-ui-url: https://gh-proxy.com/GitHub.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip
@@ -134,45 +54,10 @@ dns:
     - +.lan
     - +.local
     - geosite:cn
-# 快猫    
-    - +.quickcht3.club
-    - +.kuaimao2.club
-# 火烧 
-    - +.onesubv.site
-    - +.oneyyds.online
-    - +.fengyyds.site
-    - +.onemg.top    
-# 猫耳 
-    - +.zhunchuanpb.com
-    - +.sevenka.top
-# BestVPN 
-    - +.networklinkpro.net
-    - +.prosubnet02.eu
-# 小牛
-    - +.4yfu73r3a4kl.com
-    - +.xiaoniuyun.cc  
-# 硅谷
-    - +.huawei-cloud.shop
-    - +.huawei-cloud.vip
-    - +.gpt-agent.cc      
-# 无界
-    - +.acwct.cn
-    - +.472361.xyz
-# 冰云
-    - +.bingyun.ink   
-    - +.fafhjkah.xyz
-# 牛逼   
-    - +.66jc.top  
-    - +.jueduibupao.top  
-    
-    - +.ynhtbank.com
-    - +.qeayr.cn
-    - +.saojc.xyz   
-    - +.sssyun.xyz
-    - +.dler.cloud
-    - +.0tk8a3a1q4t94dler.com    
-    - +.aerianas.top
-    - +.gptacg.top
+
+# 域名白名单(绕过fake-ip)  
+    - +.qnode.net
+
 
 ipv6: false
 
@@ -200,30 +85,39 @@ default: &default
   type: select
   proxies:
     - 直连
-    - 所有-智选
-    - 所有-手选
-    - 香港-智选
-    - 香港-故转
-    - 台湾-故转
-    - 日本-故转
-    - 新加坡-故转
-    - 美国-故转
-    - 其他-故转
-    - 拒绝
+    - 🚀所有-智选
+    - 🚀所有-手选
+    - 🇭🇰香港-智选
+    - 🇭🇰香港-故转
+    - 🇨🇳台湾-故转
+    - 🇯🇵日本-故转
+    - 🇸🇬狮城-故转
+    - 🇺🇸美国-故转
+    - 🏠家宽-故转
+    - 🏠家宽-手选
+    - 🇪🇪其他-故转
+    - ❌拒绝
 
 proxy-groups:
 
   # 业务分流组
 
+  - {name: YouTube, <<: *default}
+  - {name: TikTok, <<: *default}
+  - {name: Facebook, <<: *default}
+  - {name: Telegram, <<: *default}
+  - {name: Twitter(X), <<: *default}
+
+  - {name: Claude, <<: *default}
   - {name: AI, <<: *default}
+  - {name: Nvidia, <<: *default}
   - {name: Meta AI, <<: *default}
   - {name: Perplexity, <<: *default}
+  - {name: Microsoft, <<: *default}
   - {name: Stream Media, <<: *default}
   - {name: GitHub, <<: *default}
   - {name: Reddit, <<: *default}  
-  - {name: Nvidia, <<: *default}
   - {name: Apple, <<: *default}
-  - {name: Microsoft, <<: *default}
   - {name: Games, <<: *default}
   - {name: Crypto, <<: *default}
   - {name: Test, <<: *default}
@@ -234,12 +128,12 @@ proxy-groups:
 
   # 所有组
 
-  - name: 所有-手选
+  - name: 🚀所有-手选
     type: select
     include-all: true
-    filter: "^((?!(直连|拒绝)).)*$"
+    filter: "^((?!(直连|❌拒绝)).)*$"
 
-  - name: 所有-智选
+  - name: 🚀所有-智选
     type: smart
     include-all: true
     policy-priority: ".*牛逼.*:0.8;.*(香港|HK).*:1.2"
@@ -252,24 +146,52 @@ proxy-groups:
       tolerance: 2
     strategy: sticky-sessions
     interval: 180
-    filter: "^((?!(直连|拒绝)).)*$"
+    filter: "^((?!(直连|❌拒绝)).)*$"
 
-  # 香港组
+  # 家宽组
 
-  - name: 香港-故转
+  - name: 🏠家宽-故转
     type: fallback
     interval: 180
     lazy: false
     proxies:
-      - 香港-手选
-      - 香港-智选
+      - 🏠家宽-手选
+      - 🏠家宽-智选
+  - name: 🏠家宽-手选
+    type: select
+    include-all: true
+    filter: "(?=.*(家宽|家庭|家|Home|Fam)).*$"
+  - name: 🏠家宽-智选
+    type: smart
+    include-all: true
+    policy-priority: ".*牛逼.*:0.8"
+    uselightgbm: true
+    collectdata: true
+    health-check: 
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 60
+      tolerance: 2
+    strategy: sticky-sessions
+    interval: 180
+    filter: "(?=.*(家宽|家庭|家|Home|Fam)).*$"
+
+  # 香港组
+
+  - name: 🇭🇰香港-故转
+    type: fallback
+    interval: 180
+    lazy: false
+    proxies:
+      - 🇭🇰香港-手选
+      - 🇭🇰香港-智选
   
-  - name: 香港-手选
+  - name: 🇭🇰香港-手选
     type: select
     include-all: true
     filter: "(?=.*(广港|香港|HK|Hong Kong|🇭🇰|HongKong)).*$"
     
-  - name: 香港-智选
+  - name: 🇭🇰香港-智选
     type: smart
     include-all: true
     policy-priority: ".*牛逼.*:0.8"
@@ -286,18 +208,18 @@ proxy-groups:
  
   # 台湾组
 
-  - name: 台湾-故转
+  - name: 🇨🇳台湾-故转
     type: fallback
     interval: 180
     lazy: false
     proxies:
-      - 台湾-手选
-      - 台湾-智选
-  - name: 台湾-手选
+      - 🇨🇳台湾-手选
+      - 🇨🇳台湾-智选
+  - name: 🇨🇳台湾-手选
     type: select
     include-all: true
     filter: "(?=.*(广台|台湾|台灣|TW|Tai Wan|🇹🇼|🇨🇳|TaiWan|Taiwan)).*$"
-  - name: 台湾-智选
+  - name: 🇨🇳台湾-智选
     type: smart
     include-all: true
     policy-priority: ".*牛逼.*:0.8"
@@ -314,18 +236,18 @@ proxy-groups:
 
   # 日本组
 
-  - name: 日本-故转
+  - name: 🇯🇵日本-故转
     type: fallback
     interval: 180
     lazy: false
     proxies:
-      - 日本-手选
-      - 日本-智选
-  - name: 日本-手选
+      - 🇯🇵日本-手选
+      - 🇯🇵日本-智选
+  - name: 🇯🇵日本-手选
     type: select
     include-all: true
     filter: "(?=.*(广日|日本|JP|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|Japan)).*$"
-  - name: 日本-智选
+  - name: 🇯🇵日本-智选
     type: smart
     include-all: true
     policy-priority: ".*牛逼.*:0.8"
@@ -340,20 +262,20 @@ proxy-groups:
     interval: 180
     filter: "(?=.*(广日|日本|JP|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|Japan)).*$"
 
-  # 新加坡组
+  # 狮城组
 
-  - name: 新加坡-故转
+  - name: 🇸🇬狮城-故转
     type: fallback
     interval: 180
     lazy: false
     proxies:
-      - 新加坡-手选
-      - 新加坡-智选
-  - name: 新加坡-手选
+      - 🇸🇬狮城-手选
+      - 🇸🇬狮城-智选
+  - name: 🇸🇬狮城-手选
     type: select
     include-all: true
-    filter: "(?=.*(广新|新加坡|SG|坡|狮城|🇸🇬|Singapore)).*$"
-  - name: 新加坡-智选
+    filter: "(?=.*(广新|狮城|SG|坡|狮城|🇸🇬|Singapore)).*$"
+  - name: 🇸🇬狮城-智选
     type: smart
     include-all: true
     policy-priority: ".*牛逼.*:0.8"
@@ -366,22 +288,22 @@ proxy-groups:
       tolerance: 2
     strategy: sticky-sessions
     interval: 180
-    filter: "(?=.*(广新|新加坡|SG|坡|狮城|🇸🇬|Singapore)).*$"
+    filter: "(?=.*(广新|狮城|SG|坡|狮城|🇸🇬|Singapore)).*$"
 
   # 美国组
 
-  - name: 美国-故转
+  - name: 🇺🇸美国-故转
     type: fallback
     interval: 180
     lazy: false
     proxies:
-      - 美国-手选
-      - 美国-智选
-  - name: 美国-手选
+      - 🇺🇸美国-手选
+      - 🇺🇸美国-智选
+  - name: 🇺🇸美国-手选
     type: select
     include-all: true
     filter: "(?=.*(广美|美|US|纽约|波特兰|达拉斯|俄勒|凤凰城|费利蒙|拉斯|洛杉|圣何塞|圣克拉|西雅|芝加|🇺🇸|United States)).*$"
-  - name: 美国-智选
+  - name: 🇺🇸美国-智选
     type: smart
     include-all: true
     policy-priority: ".*牛逼.*:0.8"
@@ -399,19 +321,19 @@ proxy-groups:
 
   # 其他组
   
-  - name: 其他-故转
+  - name: 🇪🇪其他-故转
     type: fallback
     interval: 180
     lazy: false
     proxies:
-      - 其他-手选
-      - 其他-智选
-  - name: 其他-手选
+      - 🇪🇪其他-手选
+      - 🇪🇪其他-智选
+  - name: 🇪🇪其他-手选
     type: select
     include-all: true
-    filter: "^((?!(直连|拒绝|广港|香港|HK|Hong Kong|🇭🇰|HongKong|广台|台湾|台灣|TW|Tai Wan|🇹🇼|🇨🇳|TaiWan|Taiwan|广日|日本|JP|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|Japan|广新|新加坡|SG|坡|狮城|🇸🇬|Singapore|广美|美|US|纽约|波特兰|达拉斯|俄勒|凤凰城|费利蒙|拉斯|洛杉|圣何塞|圣克拉|西雅|芝加|🇺🇸|United States)).)*$"
+    filter: "^((?!(直连|❌拒绝|广港|香港|HK|Hong Kong|🇭🇰|HongKong|广台|台湾|台灣|TW|Tai Wan|🇹🇼|🇨🇳|TaiWan|Taiwan|广日|日本|JP|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|Japan|广新|狮城|SG|坡|狮城|🇸🇬|Singapore|广美|美|US|纽约|波特兰|达拉斯|俄勒|凤凰城|费利蒙|拉斯|洛杉|圣何塞|圣克拉|西雅|芝加|🇺🇸|United States)).)*$"
 
-  - name: 其他-智选
+  - name: 🇪🇪其他-智选
     type: smart
     include-all: true
     policy-priority: ".*牛逼.*:0.8"
@@ -424,7 +346,7 @@ proxy-groups:
       tolerance: 2
     strategy: sticky-sessions
     interval: 180
-    filter: "^((?!(直连|拒绝|广港|香港|HK|Hong Kong|🇭🇰|HongKong|广台|台湾|台灣|TW|Tai Wan|🇹🇼|🇨🇳|TaiWan|Taiwan|广日|日本|JP|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|Japan|广新|新加坡|SG|坡|狮城|🇸🇬|Singapore|广美|美|US|纽约|波特兰|达拉斯|俄勒|凤凰城|费利蒙|拉斯|洛杉|圣何塞|圣克拉|西雅|芝加|🇺🇸|United States)).)*$"
+    filter: "^((?!(直连|❌拒绝|广港|香港|HK|Hong Kong|🇭🇰|HongKong|广台|台湾|台灣|TW|Tai Wan|🇹🇼|🇨🇳|TaiWan|Taiwan|广日|日本|JP|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|Japan|广新|狮城|SG|坡|狮城|🇸🇬|Singapore|广美|美|US|纽约|波特兰|达拉斯|俄勒|凤凰城|费利蒙|拉斯|洛杉|圣何塞|圣克拉|西雅|芝加|🇺🇸|United States)).)*$"
 
 # ========================
 # 规则引擎（rules）
@@ -524,12 +446,12 @@ rule-providers:
   Private / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/private.mrs"}
   China / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/cn.mrs"}
   China / IP: {<<: *ip, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geoip/cn.mrs"}
-#  Twitter / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/x.mrs"}
+  Twitter / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/x.mrs"}
 #  WhatsApp / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Whatsapp/Whatsapp.list"}
-#  Facebook / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/facebook.mrs"}
-#  Telegram / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/telegram.mrs"}  
-#  Telegram / IP: {<<: *ip, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geoip/telegram.mrs"}
-#  Youtube / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/youtube.mrs"}  
+  Facebook / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/facebook.mrs"}
+  Telegram / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/telegram.mrs"}  
+  Telegram / IP: {<<: *ip, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geoip/telegram.mrs"}
+  Youtube / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/youtube.mrs"}  
 #  Google / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/google.mrs"}  
 #  Google / IP: {<<: *ip, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geoip/google.mrs"}
 #  GateFireWall / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/gfw.mrs"}
