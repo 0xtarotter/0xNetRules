@@ -15,8 +15,6 @@ DOMAIN,eas3.msg.t-mobile.com
 DOMAIN,mascns.t-mobile.com
 DOMAIN,ns.sipgeo.t-mobile.com
 
-# 解决dl.google.com 404
-DOMAIN,dl.google.com
 
 # 域名后缀匹配 - - - - - - - - - - - - - -x
 DOMAIN-SUFFIX,t-mobile.com
