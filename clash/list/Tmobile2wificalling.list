@@ -1,11 +1,15 @@
-# 内容：T-mobile wifi-calling
+# =========================
+# T-Mobile WiFi Calling 规则
+# 来源整合 & 去重优化
+# 要求：代理需支持 UDP（4500端口），建议美国IP
+# =========================
 
-# 域名关键字匹配 - - - - - - - - - - - - - -x
+# ===== 域名关键字匹配 =====
 DOMAIN-KEYWORD,t-mobile
 DOMAIN-KEYWORD,t-mo
 DOMAIN-KEYWORD,3gppnetwork
 
-#域名走Tmobile分组代理 - - - - - - - - - - - - - -x
+# ===== 精确域名（VoWiFi 核心）=====
 DOMAIN,epdg.epc.mnc240.mcc310.pub.3gppnetwork.org
 DOMAIN,epdg.epc.mnc260.mcc310.pub.3gppnetwork.org
 DOMAIN,ss.epdg.epc.mnc260.mcc310.pub.3gppnetwork.org
@@ -15,15 +19,16 @@ DOMAIN,eas3.msg.t-mobile.com
 DOMAIN,mascns.t-mobile.com
 DOMAIN,ns.sipgeo.t-mobile.com
 
-
-# 域名后缀匹配 - - - - - - - - - - - - - -x
+# ===== 域名后缀 =====
 DOMAIN-SUFFIX,t-mobile.com
 DOMAIN-SUFFIX,t-mo.co
 DOMAIN-SUFFIX,3gppnetwork.org
 
-#IP段 - - - - - - - - - - - - - -x
+# ===== IP-CIDR（目标IP段）=====
+IP-CIDR,66.94.0.0/19,no-resolve
+IP-CIDR,206.29.177.36/32,no-resolve
+IP-CIDR,208.54.0.0/16,no-resolve
+
+# ===== 源IP（可选，特殊情况）=====
 SRC-IP-CIDR,45.60.171.103/32,no-resolve
 SRC-IP-CIDR,45.60.151.103/32,no-resolve
-SRC-IP-CIDR,66.94.0.0/19,no-resolve
-SRC-IP-CIDR,206.29.177.36/32,no-resolve
-SRC-IP-CIDR,208.54.0.0/16,no-resolve
