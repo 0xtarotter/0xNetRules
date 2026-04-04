@@ -1,23 +1,32 @@
+# T-Mobile WiFi Calling / VoWiFi / IMS
+# behavior: classical
+# source: merged & optimized
+
 DOMAIN-KEYWORD,t-mobile
-DOMAIN-KEYWORD,t-mo
+DOMAIN-KEYWORD,epdg
+DOMAIN-KEYWORD,sipgeo
 DOMAIN-KEYWORD,3gppnetwork
 
 DOMAIN,epdg.epc.mnc240.mcc310.pub.3gppnetwork.org
 DOMAIN,epdg.epc.mnc260.mcc310.pub.3gppnetwork.org
+DOMAIN,epdg.epc.geo.mnc240.mcc310.pub.3gppnetwork.org
+DOMAIN,epdg.epc.geo.mnc260.mcc310.pub.3gppnetwork.org
+DOMAIN,ss.epdg.epc.mnc240.mcc310.pub.3gppnetwork.org
 DOMAIN,ss.epdg.epc.mnc260.mcc310.pub.3gppnetwork.org
+DOMAIN,ss.epdg.epc.geo.mnc240.mcc310.pub.3gppnetwork.org
 DOMAIN,ss.epdg.epc.geo.mnc260.mcc310.pub.3gppnetwork.org
-DOMAIN,crl.t-mobile.com
-DOMAIN,eas3.msg.t-mobile.com
-DOMAIN,mascns.t-mobile.com
 DOMAIN,ns.sipgeo.t-mobile.com
+DOMAIN,sipgeo.t-mobile.com
+DOMAIN,eas3.msg.t-mobile.com
+DOMAIN,eas.msg.t-mobile.com
+DOMAIN,mascns.t-mobile.com
+DOMAIN,crl.t-mobile.com
 
 DOMAIN-SUFFIX,t-mobile.com
 DOMAIN-SUFFIX,t-mo.co
 DOMAIN-SUFFIX,3gppnetwork.org
+DOMAIN-SUFFIX,msg.t-mobile.com
 
 IP-CIDR,66.94.0.0/19,no-resolve
 IP-CIDR,206.29.177.36/32,no-resolve
 IP-CIDR,208.54.0.0/16,no-resolve
-
-SRC-IP-CIDR,45.60.171.103/32,no-resolve
-SRC-IP-CIDR,45.60.151.103/32,no-resolve
