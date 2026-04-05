@@ -430,6 +430,7 @@ proxy-groups:
 rules:
   - RULE-SET,Direct_Custom,自定义直连
   - RULE-SET,Proxy_Custom,自定义代理
+  - RULE-SET,T-mobile,T-mobile
   - RULE-SET,WeChat,微信
   - RULE-SET,QQ,QQ
   - RULE-SET,Bilibili,哔哩哔哩
@@ -458,10 +459,6 @@ rules:
   - RULE-SET,MetaAI,AI
   - RULE-SET,Perplexity,AI
   - RULE-SET,Cursor,AI
-  - RULE-SET,CharacterAI,AI
-  - RULE-SET,HuggingFace,AI
-  - RULE-SET,Midjourney,AI
-  - RULE-SET,Notion,AI
   - RULE-SET,Nvidia,AI
 
   - RULE-SET,Google,Google
@@ -469,9 +466,6 @@ rules:
   - RULE-SET,Docker,Dev
   - RULE-SET,GitLab,Dev
   - RULE-SET,JetBrains,Dev
-  - RULE-SET,npm,Dev
-  - RULE-SET,PyPI,Dev
-  - RULE-SET,T-mobile,T-mobile
   - RULE-SET,Reddit,Reddit
   - RULE-SET,Apple,Apple-国际
   - RULE-SET,Apple_Custom,Apple-国际
@@ -479,17 +473,10 @@ rules:
 
   - RULE-SET,Crypto,Crypto
   - RULE-SET,Binance,Crypto
-  - RULE-SET,BinanceUS,Crypto
   - RULE-SET,Bybit,Crypto
   - RULE-SET,OKX,Crypto
-  - RULE-SET,Coinbase,Crypto
-  - RULE-SET,Kraken,Crypto
-  - RULE-SET,KuCoin,Crypto
-  - RULE-SET,Gateio,Crypto
-  - RULE-SET,MEXC,Crypto
-  - RULE-SET,Bitget,Crypto
-  - RULE-SET,HTX,Crypto
-  - RULE-SET,CryptoCom,Crypto
+  - RULE-SET,Cryptolist,Crypto
+  - RULE-SET,Crypto,Crypto
 
   - RULE-SET,Netflix,海外流媒体
   - RULE-SET,Netflix_IP,海外流媒体,no-resolve
@@ -539,23 +526,29 @@ rule-anchor:
     behavior: classical
     format: text
 
+  classical_yaml: &classical_yaml
+    type: http
+    interval: 86400
+    behavior: classical
+    format: yaml
+
 rule-providers:
 
   T-mobile:
-    <<: *domain_mrs
-    path: ./ruleset/T-mobile.mrs
-    url: "https://gh-proxy.com/https://raw.githubusercontent.com/0xtarotter/0xNetRules/refs/heads/dddd/clash/list/Tmobile2wificalling.mrs"
+    <<: *classical_text
+    path: ./ruleset/T-mobile.list
+    url: "https://gh-proxy.com/raw.githubusercontent.com/0xtarotter/0xNetRules/refs/heads/dddd/clash/list/Tmobile2wificalling.list"
 
 
   Proxy_Custom:
     <<: *classical_text
     path: ./ruleset/Proxy_Custom.list
-    url: "https://gh-proxy.com/https://raw.githubusercontent.com/0xtarotter/0xNetRules/refs/heads/dddd/clash/list/Proxy_Custom.list"
+    url: "https://gh-proxy.com/raw.githubusercontent.com/0xtarotter/0xNetRules/refs/heads/dddd/clash/list/Proxy_Custom.list"
 
   Direct_Custom:
     <<: *classical_text
     path: ./ruleset/Direct_Custom.list
-    url: "https://gh-proxy.com/https://raw.githubusercontent.com/0xtarotter/0xNetRules/refs/heads/dddd/clash/list/Direct_Custom.list"
+    url: "https://gh-proxy.com/raw.githubusercontent.com/0xtarotter/0xNetRules/refs/heads/dddd/clash/list/Direct_Custom.list"
 
   YouTube:
     <<: *domain_mrs
@@ -633,29 +626,9 @@ rule-providers:
     url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/perplexity.mrs"
 
   Cursor:
-    <<: *classical_text
-    path: ./ruleset/Cursor.list
-    url: "https://gh-proxy.com/raw.githubusercontent.com/liandu2024/clash/refs/heads/main/list/Cursor.list"
-
-  CharacterAI:
-    <<: *classical_text
-    path: ./ruleset/CharacterAI.list
-    url: "https://gh-proxy.com/raw.githubusercontent.com/liandu2024/clash/refs/heads/main/list/CharacterAI.list"
-
-  HuggingFace:
-    <<: *classical_text
-    path: ./ruleset/HuggingFace.list
-    url: "https://gh-proxy.com/raw.githubusercontent.com/liandu2024/clash/refs/heads/main/list/HuggingFace.list"
-
-  Midjourney:
-    <<: *classical_text
-    path: ./ruleset/Midjourney.list
-    url: "https://gh-proxy.com/raw.githubusercontent.com/liandu2024/clash/refs/heads/main/list/Midjourney.list"
-
-  Notion:
-    <<: *classical_text
-    path: ./ruleset/Notion.list
-    url: "https://gh-proxy.com/raw.githubusercontent.com/liandu2024/clash/refs/heads/main/list/Notion.list"
+    <<: *classical_yaml
+    path: ./ruleset/Cursor.yaml
+    url: "https://gh-proxy.com/raw.githubusercontent.com/SkywalkerJi/Clash-Rules/refs/heads/master/AI/Cursor.yaml"
 
   Nvidia:
     <<: *classical_text
@@ -692,16 +665,6 @@ rule-providers:
     path: ./ruleset/JetBrains.list
     url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Jetbrains/Jetbrains.list"
 
-  npm:
-    <<: *classical_text
-    path: ./ruleset/npm.list
-    url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/npm/npm.list"
-
-  PyPI:
-    <<: *classical_text
-    path: ./ruleset/PyPI.list
-    url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PyPI/PyPI.list"
-
   Reddit:
     <<: *domain_mrs
     path: ./ruleset/Reddit.mrs
@@ -732,11 +695,6 @@ rule-providers:
     path: ./ruleset/Binance.mrs
     url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/binance.mrs"
 
-  BinanceUS:
-    <<: *classical_text
-    path: ./ruleset/BinanceUS.list
-    url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BinanceUS/BinanceUS.list"
-
   Bybit:
     <<: *domain_mrs
     path: ./ruleset/Bybit.mrs
@@ -747,44 +705,14 @@ rule-providers:
     path: ./ruleset/OKX.mrs
     url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/okx.mrs"
 
-  Coinbase:
+  Cryptolist:
     <<: *classical_text
-    path: ./ruleset/Coinbase.list
-    url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Coinbase/Coinbase.list"
+    path: ./ruleset/Cryptolist.list
+    url: "https://gh-proxy.com/raw.githubusercontent.com/0xtarotter/0xNetRules/refs/heads/dddd/clash/list/Cryptolist.list"
 
-  Kraken:
+  Crypto:
     <<: *classical_text
-    path: ./ruleset/Kraken.list
-    url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Kraken/Kraken.list"
-
-  KuCoin:
-    <<: *classical_text
-    path: ./ruleset/KuCoin.list
-    url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/KuCoin/KuCoin.list"
-
-  Gateio:
-    <<: *classical_text
-    path: ./ruleset/Gateio.list
-    url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Gateio/Gateio.list"
-
-  MEXC:
-    <<: *classical_text
-    path: ./ruleset/MEXC.list
-    url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/MEXC/MEXC.list"
-
-  Bitget:
-    <<: *classical_text
-    path: ./ruleset/Bitget.list
-    url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Bitget/Bitget.list"
-
-  HTX:
-    <<: *classical_text
-    path: ./ruleset/HTX.list
-    url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HTX/HTX.list"
-
-  CryptoCom:
-    <<: *classical_text
-    path: ./ruleset/CryptoCom.list
+    path: ./ruleset/Crypto.list
     url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Crypto/Crypto.list"
 
   Netflix:
@@ -840,7 +768,7 @@ rule-providers:
   QQ:
     <<: *classical_text
     path: ./ruleset/QQ.list
-    url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/QQ/QQ.list"
+    url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Tencent/Tencent.list"
 
   Bilibili:
     <<: *classical_text
@@ -850,7 +778,7 @@ rule-providers:
   BilibiliHMT:
     <<: *classical_text
     path: ./ruleset/BilibiliHMT.list
-    url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BiliBiliHMT/BiliBiliHMT.list"
+    url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/BiliBiliIntl/BiliBiliIntl.list"
 
   ChinaMedia:
     <<: *classical_text
