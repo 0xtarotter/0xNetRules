@@ -1,1 +1,145 @@
 
+
+
+
+
+
+
+# ================================
+# Classical 规则写法说明
+# 适用于：
+#   behavior: classical
+#   format: text
+# ================================
+#
+# 一、域名类规则
+#
+# 1. 完整域名匹配
+# DOMAIN,example.com
+# 只匹配 example.com
+#
+# 2. 域名后缀匹配
+# DOMAIN-SUFFIX,example.com
+# 匹配 example.com 及其所有子域名
+# 如：www.example.com / api.example.com
+#
+# 3. 域名关键词匹配
+# DOMAIN-KEYWORD,google
+# 匹配域名中包含 google 的请求
+# 如：google.com / googlevideo.com
+#
+#
+# 二、IP 类规则
+#
+# 4. IPv4 / IPv6 CIDR 匹配
+# IP-CIDR,1.2.3.4/32
+# IP-CIDR,8.8.8.0/24
+# IP-CIDR6,2400:3200::/32
+#
+# 32单IP   24子网掩码段
+#
+# 5. 不解析域名直接匹配 IP 段（一般用于规则里，不常写在 provider 中）
+# 某些核心支持 no-resolve 参数，但通常不建议在 list 中乱写
+#
+#
+# 三、进程类规则（仅部分环境有效）
+#
+# 6. 进程名匹配
+# PROCESS-NAME,chrome.exe
+# PROCESS-NAME,Telegram.exe
+#
+# 7. 进程路径匹配
+# PROCESS-PATH,C:\Program Files\Google\Chrome\Application\chrome.exe
+# PROCESS-PATH,/usr/bin/wget
+#
+# 注意：
+# - 进程规则通常只在开启对应特性的 Meta / TUN 环境下更有意义
+# - 路径匹配依赖系统和客户端支持
+#
+#
+# 四、端口类规则
+#
+# 8. 源端口匹配
+# SRC-PORT,12345
+#
+# 9. 目标端口匹配
+# DST-PORT,443
+# DST-PORT,5228
+#
+#
+# 五、网络类型 / 协议类规则（部分核心支持）
+#
+# 10. 网络类型
+# NETWORK,TCP
+# NETWORK,UDP
+#
+# 11. DSCP
+# DSCP,46
+#
+#
+# 六、Geo 类规则（通常更常见于主配置 rules，不一定建议写进自定义 list）
+#
+# 12. GEOIP
+# GEOIP,CN
+# GEOIP,US
+#
+# 注意：
+# - 是否可用于 provider 取决于核心实现
+# - 一般 GEOIP 更常直接写在主 rules 里
+#
+#
+# 七、注释写法
+#
+# 以 # 开头的是注释，不参与匹配
+# 空行会被忽略
+#
+#
+# 八、推荐写法示例
+#
+# -------- 适合直连 --------
+# DOMAIN-SUFFIX,lan
+# DOMAIN-SUFFIX,local
+# DOMAIN-SUFFIX,example.cn
+# DOMAIN,dl.site.cn
+# IP-CIDR,192.168.0.0/16
+# IP-CIDR,10.0.0.0/8
+#
+# -------- 适合代理 --------
+# DOMAIN-SUFFIX,openai.com
+# DOMAIN-SUFFIX,chatgpt.com
+# DOMAIN-SUFFIX,claude.ai
+# DOMAIN-KEYWORD,telegram
+# DOMAIN,api.example.com
+#
+#
+# 九、重要注意事项
+#
+# 1. 这是 classical 类型规则文件，不是纯域名文件
+#    所以不能只写：
+#    example.com
+#    google.com
+#
+#    必须写成：
+#    DOMAIN-SUFFIX,example.com
+#    DOMAIN,google.com
+#
+# 2. 如果你的文件内容只是“纯域名列表”，那应该使用：
+#    behavior: domain
+#    而不是 classical
+#
+# 3. 如果同一个域名同时命中多个规则，按主配置 rules 中的顺序决定优先级
+#
+# 4. 自定义规则建议放在主 rules 前面，提高优先级
+#
+#
+# 十、示例
+#
+# DOMAIN-SUFFIX,openai.com
+# DOMAIN-SUFFIX,claude.ai
+# DOMAIN,chat.openai.com
+# DOMAIN-KEYWORD,telegram
+# IP-CIDR,91.108.56.0/22
+# PROCESS-NAME,Telegram.exe
+# DST-PORT,443
+#
+# ================================
