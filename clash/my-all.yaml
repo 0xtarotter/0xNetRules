@@ -476,7 +476,7 @@ rules:
   - RULE-SET,Bybit,Crypto
   - RULE-SET,OKX,Crypto
   - RULE-SET,Cryptolist,Crypto
-  - RULE-SET,Crypto,Crypto
+  - RULE-SET,Crypto2,Crypto
 
   - RULE-SET,Netflix,海外流媒体
   - RULE-SET,Netflix_IP,海外流媒体,no-resolve
@@ -710,9 +710,9 @@ rule-providers:
     path: ./ruleset/Cryptolist.list
     url: "https://gh-proxy.com/raw.githubusercontent.com/0xtarotter/0xNetRules/refs/heads/dddd/clash/list/Cryptolist.list"
 
-  Crypto:
+  Crypto2:
     <<: *classical_text
-    path: ./ruleset/Crypto.list
+    path: ./ruleset/Crypto2.list
     url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Crypto/Crypto.list"
 
   Netflix:
