@@ -1,20 +1,30 @@
-# CMLINK EE GIFFGAFF WiFi Calling / VoWiFi / IMS
+# CMLINK EE GIFFGAFF O2 THREE Vodafone WiFi Calling / VoWiFi / IMS
 # behavior: classical
-# source: merged & optimized
+# source: merged & verified
 
 # 地区检测
 DOMAIN-SUFFIX,gspe1-ssl.ls.apple.com
 
-# 沃达丰
-DOMAIN-SUFFIX,epdg.epc.mnc015.mcc234.pub.3gppnetwork.org
-DOMAIN-SUFFIX,ss.epdg.epc.mnc015.mcc234.pub.3gppnetwork.org
-DOMAIN-SUFFIX,ss.epdg.epc.geo.mnc015.mcc234.pub.3gppnetwork.org
+# Vodafone UK
+DOMAIN,epdg.epc.mnc015.mcc234.pub.3gppnetwork.org
+DOMAIN,ss.epdg.epc.mnc015.mcc234.pub.3gppnetwork.org
+DOMAIN,ss.epdg.epc.geo.mnc015.mcc234.pub.3gppnetwork.org
 DOMAIN-SUFFIX,entsrv-uk.vodafone.com
 DOMAIN-SUFFIX,vuk-gto.prod.ondemandconnectivity.com
-IP-CIDR,88.82.0.0/19,no-resolve
 
-# CMLinkUK EE
-IP-CIDR,46.68.0.0/17,no-resolve
+# EE / CMLink UK
+DOMAIN,epdg.epc.mnc030.mcc234.pub.3gppnetwork.org
 
-# Giffgaff
-IP-CIDR,87.194.0.0/16,no-resolve
+# O2 / giffgaff
+DOMAIN,epdg.epc.mnc010.mcc234.pub.3gppnetwork.org
+
+# Three UK
+DOMAIN,epdg.epc.mnc020.mcc234.pub.3gppnetwork.org
+
+# 已解析到的高置信 ePDG IP
+IP-CIDR,198.98.0.13/32,no-resolve
+IP-CIDR,198.98.0.108/32,no-resolve
+IP-CIDR,198.98.0.109/32,no-resolve
+IP-CIDR,198.98.0.110/32,no-resolve
+IP-CIDR,198.98.0.111/32,no-resolve
+IP-CIDR,198.98.0.112/32,no-resolve
