@@ -1,0 +1,4 @@
+payload:
+  - DOMAIN-SUFFIX,epdg.epc.mnc681.mcc302.pub.3gppnetwork.org
+  - DOMAIN-SUFFIX,epdg.epc.mnc780.mcc302.pub.3gppnetwork.org
+  - DOMAIN-SUFFIX,epdg.epc.mnc781.mcc302.pub.3gppnetwork.org
