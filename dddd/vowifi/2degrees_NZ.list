@@ -1,0 +1,3 @@
+payload:
+  - DOMAIN-SUFFIX,epdg.ims.2degrees.net.nz
+  - IP-CIDR,118.148.0.0/15,no-resolve

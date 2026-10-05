@@ -1,0 +1,4 @@
+payload:
+  - DOMAIN-SUFFIX,epdg.epc.mnc003.mcc262.pub.3gppnetwork.org
+  - IP-CIDR,213.20.0.0/16,no-resolve
+  - IP-CIDR,62.52.0.0/16,no-resolve
